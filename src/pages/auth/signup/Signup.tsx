@@ -118,10 +118,10 @@ const Signup = () => {
     }
   };
 
-  const handleUserTypeSelect = (type: string) => {
-     e.preventDefault();
-    setFormData({ ...formData, userType: type });
-  };
+  //   const handleUserTypeSelect = (type: string) => {
+
+  //     setFormData({ ...formData, userType: type });
+  //   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, files } = e.target;
@@ -151,62 +151,81 @@ const Signup = () => {
 
         {/* Step 0: User Type Selection */}
         {step === 0 && (
-          <form onSubmit={handleNext}>
+          <div>
             <h2 className="text-gray-800 font-semibold mb-6 text-center text-xl">
-              LOGIN
+              SIGN UP
             </h2>
 
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div
-                className={`p-4 border rounded-lg text-center cursor-pointer transition-colors ${
+            {/* User Type Selection */}
+            <div className="flex flex-col space-y-3 mb-4">
+              <label
+                className={`flex items-center justify-center space-x-2 border p-3 rounded-lg cursor-pointer transition-colors ${
                   formData.userType === "owner"
                     ? "bg-blue-100 border-blue-500"
                     : "border-gray-300 hover:bg-gray-50"
                 }`}
-                onClick={() => handleUserTypeSelect("owner")}
               >
-                <div className="mb-2">🏠</div>
-                <span>Property owner</span>
-              </div>
+                <input
+                  type="radio"
+                  name="userType"
+                  value="owner"
+                  checked={formData.userType === "owner"}
+                  onChange={handleChange}
+                  className="hidden"
+                />
+                <span>🏠 Property Owner</span>
+              </label>
 
-              <div
-                className={`p-4 border rounded-lg text-center cursor-pointer transition-colors ${
+              <label
+                className={`flex items-center justify-center space-x-2 border p-3 rounded-lg cursor-pointer transition-colors ${
                   formData.userType === "tenant"
                     ? "bg-blue-100 border-blue-500"
                     : "border-gray-300 hover:bg-gray-50"
                 }`}
-                onClick={() => handleUserTypeSelect("tenant")}
               >
-                <div className="mb-2">👤</div>
-                <span>Tenant</span>
-              </div>
+                <input
+                  type="radio"
+                  name="userType"
+                  value="tenant"
+                  checked={formData.userType === "tenant"}
+                  onChange={handleChange}
+                  className="hidden"
+                />
+                <span>👤 Tenant</span>
+              </label>
 
-              <div
-                className={`p-4 border rounded-lg text-center cursor-pointer transition-colors ${
+              <label
+                className={`flex items-center justify-center space-x-2 border p-3 rounded-lg cursor-pointer transition-colors ${
                   formData.userType === "manager"
                     ? "bg-blue-100 border-blue-500"
                     : "border-gray-300 hover:bg-gray-50"
                 }`}
-                onClick={() => handleUserTypeSelect("manager")}
               >
-                <div className="mb-2">💼</div>
-                <span>Community manager</span>
-              </div>
+                <input
+                  type="radio"
+                  name="userType"
+                  value="manager"
+                  checked={formData.userType === "manager"}
+                  onChange={handleChange}
+                  className="hidden"
+                />
+                <span>💼 Community Manager</span>
+              </label>
             </div>
 
             {errors.userType && (
-              <p className="text-red-500 text-sm mt-1 text-center mb-4">
+              <p className="text-red-500 text-sm text-center mb-3">
                 {errors.userType}
               </p>
             )}
 
             <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              onClick={handleNext}
+              className="w-full bg-blue-600 text-white py-2 rounded-lg mt-3"
             >
               CONTINUE
             </button>
-          </form>
+          </div>
         )}
 
         {/* Step 1 */}
