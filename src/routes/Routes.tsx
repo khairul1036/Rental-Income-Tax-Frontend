@@ -4,6 +4,13 @@ import Signup from "../pages/auth/signup/Signup";
 import Login from "../pages/auth/login/Login";
 import ForgotPassword from "../pages/auth/forgotPass/ForgotPassword";
 import DashboardLayout from "../layouts/DashboardLayout";
+import DashBoard from "../pages/cManager/DashBoard";
+import Property from "../pages/cManager/Property";
+import ViewProperty from "../pages/cManager/ViewProperty";
+import Notification from "../pages/common/Notification";
+import Owners from "../pages/cManager/Owners";
+import ViewProfile from "../pages/cManager/ViewProfile";
+import History from "../pages/cManager/History";
 
 const router = createBrowserRouter([
   // Public / Landing routes
@@ -24,7 +31,15 @@ const router = createBrowserRouter([
     children: [
       { path: "owner", element: <h1 className="p-6">Owner Dashboard</h1> },
       { path: "tenant", element: <h1 className="p-6">Tenant Dashboard</h1> },
-      { path: "manager", element: <h1 className="p-6">Manager Dashboard</h1> },
+
+      // c manager routes
+      { path: "manager", element: <DashBoard/> },
+      { path: "property", element: <Property/> },
+      { path: "view-property", element: <ViewProperty/> },
+      { path: "notification", element: <Notification/> },
+      { path: "owners", element: <Owners/> },
+      { path: "owners/view-profile", element: <ViewProfile/> },
+      { path: "manager/history", element: <History/> },
     ],
   },
 ]);
