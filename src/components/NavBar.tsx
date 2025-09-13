@@ -41,9 +41,8 @@ const NavBar = () => {
                 </button>
                 </Link>
 
-
-
-                <button
+                <Link to={'/dashboard/settings'}>
+                 <button
                     onClick={() => setActiveTab('settings')}
                     className={`flex flex-col items-center px-3 py-1 rounded-md ${activeTab === 'settings' ? 'text-blue-600' : 'text-gray-600'
                         }`}
@@ -51,6 +50,11 @@ const NavBar = () => {
                     <FaCog size={18} />
                     <span className="text-xs mt-1">Settings</span>
                 </button>
+                </Link>
+
+
+
+
             </div>
         </div>
     );

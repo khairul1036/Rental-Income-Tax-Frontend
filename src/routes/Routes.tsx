@@ -11,6 +11,7 @@ import Notification from "../pages/common/Notification";
 import Owners from "../pages/cManager/Owners";
 import ViewProfile from "../pages/cManager/ViewProfile";
 import History from "../pages/cManager/History";
+import Settings from "../pages/common/Settings";
 
 const router = createBrowserRouter([
   // Public / Landing routes
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <LandingLayout />,
     children: [
+      { index: true, element: <Login /> },
       { path: "login", element: <Login /> },
       { path: "signup", element: <Signup /> },
       { path: "forgot-password", element: <ForgotPassword /> },
@@ -33,13 +35,14 @@ const router = createBrowserRouter([
       { path: "tenant", element: <h1 className="p-6">Tenant Dashboard</h1> },
 
       // c manager routes
-      { path: "manager", element: <DashBoard/> },
-      { path: "property", element: <Property/> },
-      { path: "view-property", element: <ViewProperty/> },
-      { path: "notification", element: <Notification/> },
-      { path: "owners", element: <Owners/> },
-      { path: "owners/view-profile", element: <ViewProfile/> },
-      { path: "manager/history", element: <History/> },
+      { path: "manager", element: <DashBoard /> },
+      { path: "property", element: <Property /> },
+      { path: "view-property", element: <ViewProperty /> },
+      { path: "notification", element: <Notification /> },
+      { path: "owners", element: <Owners /> },
+      { path: "settings", element: <Settings /> },
+      { path: "owners/view-profile", element: <ViewProfile /> },
+      { path: "manager/history", element: <History /> },
     ],
   },
 ]);

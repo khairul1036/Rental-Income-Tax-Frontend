@@ -5,7 +5,7 @@ import { Link } from "react-router";
 // Top Navigation Bar Component
 const TopNavBar = () => {
   const [notificationCount, setNotificationCount] = useState(3);
-  
+  setNotificationCount(5)
   return (
     <div className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-10">
       <div className="flex justify-between items-center px-4 py-3">
