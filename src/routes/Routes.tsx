@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter } from "react-router-dom"; // ✅ react-router-dom
 import LandingLayout from "../layouts/LandingLayout";
 import Signup from "../pages/auth/signup/Signup";
 import Login from "../pages/auth/login/Login";

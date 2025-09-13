@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaHome, FaBuilding, FaUsers, FaCog } from 'react-icons/fa';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
+
 
 const NavBar = () => {
     const [activeTab, setActiveTab] = useState('dashboard');

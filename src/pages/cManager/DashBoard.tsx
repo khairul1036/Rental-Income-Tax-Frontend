@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaCalendar } from 'react-icons/fa';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const DashBoard = () => {
     const [selectedYear, setSelectedYear] = useState(2025);
